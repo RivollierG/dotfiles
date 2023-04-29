@@ -1,0 +1,123 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+---
+console_title_template:  {{ .Shell }} in {{ if ne .Folder "~"}}  {{ .Folder }}{{else}}{{end}}
+final_space: true
+version: 2
+blocks:
+
+  - alignment: left
+    type: prompt
+    # newline: true
+    segments:
+      # - type: command
+      #   style: plain
+      #   foreground: '#ffffff'
+      #   properties:
+      #     shell: bash
+      #     command: -i conda_auto_env
+
+      - type: os
+        style: diamond
+        # trailing_diamond:  # "\ue0b4"
+        leading_diamond: "\ue0b6"
+        foreground: '#000000'
+        background: '#eaab7b'
+        template: '{{ if .WSL }}{{ end }}{{.Icon}} '
+
+      - background: '#eaab7b'
+        foreground: '#000000'
+        properties:
+          time_format: '15:04'
+        style: diamond
+        template: '{{ .CurrentDate | date .Format }} '
+        # leading_diamond: "<transparent,background>\ue0b0</>"
+        trailing_diamond: "\ue0b0"
+        type: time
+
+      - background: '#3776AB'
+        foreground: '#000000'
+        # leading_diamond:  #"\ue0b6"
+        style: diamond
+        display_mode: context
+        leading_diamond: "<transparent,background>\ue0b0</>"
+        trailing_diamond: "\ue0b0"
+        template: ' {{ if .Error }}{{ .Error }}{{ else }}{{ end }}{{ if .Venv }} {{ .Venv }} {{ .Full }} {{ end }}'
+        type: python
+
+      - background: "#276DC3"
+        foreground: "#000000"
+        style: diamond
+        trailing_diamond: 
+        leading_diamond: "<transparent,background>\ue0b0</>"
+        template: ' {{ if .Error }}{{ .Error }}{{ else }}R {{ .Full }}{{ end }} '
+        type: r
+
+      - background: "#9558B2"
+        foreground: "#000000"
+        style: diamond
+        trailing_diamond: 
+        leading_diamond: "<transparent,background>\ue0b0</>"
+        template: " {{ if .Error }}{{ .Error }}{{ else }} \uE624 {{ .Full }}{{ end }} "
+        type: julia
+
+      - background: '#91ddff'
+        foreground: '#000000'
+        style: diamond
+        trailing_diamond: 
+        leading_diamond: "<transparent,background>\ue0b0</>"
+        properties:
+          folder_icon: 
+          folder_separator_icon: ' /'
+          # home_icon: 
+          style: folder
+        template: "   {{ path .Path .Location }} "
+        type: path
+
+      - background: '#a6ff91'
+        background_templates:
+          - '{{ if or (.Working.Changed) (.Staging.Changed) }}#ffb391{{ end }}'
+          - '{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ea91ff{{ end }}'
+          - '{{ if gt .Ahead 0 }}#fff591{{ end }}'
+          - '{{ if gt .Behind 0 }}#fff591{{ end }}'
+        foreground: '#000000'
+        style: diamond
+        trailing_diamond: 
+        leading_diamond: "<transparent,background>\ue0b0</>"
+        properties:
+          branch_icon: '  '
+          fetch_status: true
+          fetch_upstream_icon: true
+        template: ' {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#0000FF>  {{ .Staging.String }}</>{{ end }} '
+        type: git
+
+      - background: '#00aa00'
+        background_templates:
+          - '{{ if gt .Code 0 }}#ee0000{{ end }}'
+        foreground: '#000000'
+        style: diamond
+        trailing_diamond: 
+        leading_diamond: "<transparent,background>\ue0b0</>"
+        template: " {{ if gt .Code 0 }}{{ else }}{{ end }} "
+        # properties:
+        #   always_enabled: true
+        type: exit
+
+  # - alignment: right
+  #   type: rprompt
+  #   segments:
+  #
+  #     - background: '#E95420'
+  #       foreground: '#000000'
+  #       properties:
+  #         time_format: '15:04'
+  #       style: diamond
+  #       template: ' {{ .CurrentDate | date .Format }}'
+  #       leading_diamond:  #"\ue0b6"
+  #       type: time
+  #
+  #     - type: os
+  #       style: diamond
+  #       trailing_diamond:  # "\ue0b4"
+  #       foreground: '#000000'
+  #       background: '#E95420'
+  #       template: ' {{ if .WSL }}{{ end }}{{.Icon}}  '

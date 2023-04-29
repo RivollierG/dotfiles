@@ -1,0 +1,6 @@
+#
+# Screen capture
+#
+
+bindsym Print exec `grim -g "$(slurp)" ~/Pictures/screenshots/$(date +"%Y%m%d%H%M%S").png | wl-copy`
+#bindsym Shift + Print exec `grim ~/Pictures/screenshots/$(date +"%Y%m%d%H%M%S").png | wl-copy`

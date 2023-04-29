@@ -1,0 +1,140 @@
+############### Prompt format ###############
+
+format = """
+[└─>]('') $cmd_duration\
+$status
+$container\
+$docker_context\
+$username\
+$os\
+$time\
+$python\
+$directory\
+$rlang\
+$julia\
+$git_branch\
+$git_status\
+$character
+"""
+
+continuation_prompt = '▶▶ '
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+############### Color palette ###############
+
+# Set 'foo' as custom color palette
+palette = 'customcolors'
+
+# Define custom colors
+[palettes.customcolors]
+# Overwrite existing color
+# blue = '21'
+# Define new color
+pycolor = '#3776AB'
+rcolor = '#276DC3'
+juliacolor = '#9558B2'
+fedoracolor = '#51A2DA'
+dircolor = '#d4d4ff'
+gitcolor = '#F05032'
+txt = '#000000'
+
+############### Module formats ###############
+
+[cmd_duration]
+min_time = 0
+show_milliseconds = false
+disabled = false
+style = ""
+format = '[$duration]($style) '
+
+[status]
+style = 'red'
+symbol = ' '
+success_symbol = '[](#00aa00) '
+sigint_symbol = ' '
+not_found_symbol = '󰈞 '
+format = '[$symbol$common_meaning$signal_name]($style) '
+map_symbol = true
+disabled = false
+
+[container]
+format = '[$symbol \[$name\]]($style) '
+
+[username]
+style_user = 'white bold'
+style_root = 'red bold'
+format = '[](blink red) [$user]($style) '
+disabled = false
+show_always = false
+
+[os]
+style = "bg:fedoracolor fg:txt"
+format = '[[](fg:fedoracolor)$symbol]($style)'
+disabled = false # Disabled by default
+
+[os.symbols]
+Fedora = ""
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:fedoracolor fg:txt"
+format = '[ $time [](fg:fedoracolor)]($style)'
+
+[python]
+symbol = ''
+pyenv_version_name = true
+python_binary = ['./venv/bin/python', 'python', 'python3', 'python2']
+style = "bg:pycolor fg:txt"
+format = '[[](inverted fg:pycolor) $symbol $virtualenv [](fg:pycolor)]($style)'
+
+[directory]
+style = "bg:dircolor fg:txt"
+format = "[[](inverted fg:dircolor) $path [](fg:dircolor)]($style)"
+truncation_length = 1
+truncation_symbol = ""
+home_symbol = ""
+
+[directory.substitutions]
+"Documents" = ""
+"Downloads" = ""
+"Téléchargements" = ""
+"Music" = ""
+"Pictures" = ""
+"dotfiles" = "󱁿"
+
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[docker_context]
+symbol = " "
+style = "bg:#06969A"
+format = '[ $symbol $context ]($style) $path'
+
+[rlang]
+style = "bg:rcolor fg:txt"
+format = '[[](inverted fg:rcolor) [R](bold $style) $version [](fg:rcolor)]($style)'
+
+[julia]
+symbol = ""
+style = "bg:juliacolor fg:txt"
+format = '[[](inverted fg:juliacolor) $symbol ($version) [](fg:juliacolor)]($style)'
+
+[git_branch]
+symbol = ""
+style = "bg:gitcolor fg:txt"
+format = '[[](inverted fg:gitcolor) $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:gitcolor fg:txt"
+format = '[$all_status$ahead_behind [](fg:gitcolor)]($style)'
+
+[character]
+format = ' '
+success_symbol = ''
+error_symbol = ''

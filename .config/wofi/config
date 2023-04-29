@@ -1,0 +1,9 @@
+mode=run
+insensitive=true
+prompt= Bonjour, que puis-je faire pour vous ?
+width=500
+always_parse_args=true
+term=alacritty
+hide_scroll=true
+location=2
+yoffset=300

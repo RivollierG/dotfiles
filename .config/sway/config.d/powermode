@@ -1,0 +1,15 @@
+
+# # Shutdown, Reboot, Lock Screen, and Logout 
+
+# set $power_mode "[<b>l</b>]ock - [<b>e</b>]xit sway - [<b>r</b>]eboot - [<b>p</b>]oweroff"
+# bindsym $mod+Shift+o mode $power_mode
+# mode --pango_markup $power_mode {
+#     bindsym p         exec systemctl poweroff
+#     bindsym r         exec systemctl reboot 
+#     bindsym l         exec 'bash $HOME/scripts/lock.sh', mode "default"
+#     bindsym e         exec swaymsg exit
+
+#     bindsym Return    mode "default"
+#     bindsym Escape    mode "default"
+#     }
+bindsym $mod+Shift+o exec 'bash ~/scripts/power.sh'

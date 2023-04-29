@@ -1,0 +1,202 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+
+
+# Your preferred terminal emulator
+set $term alacritty
+
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu wofi --show drun -I | xargs swaymsg exec --
+set $menurun wofi --show run -I | xargs swaymsg exec --
+# set $gnome-schema org.gnome.desktop.interface
+
+set $web_browser vivaldi
+
+# Set Gaps
+gaps inner 5px
+gaps outer 1px
+smart_gaps on
+smart_borders on
+
+# No title bar
+default_border pixel 2
+default_floating_border none
+
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+
+# output * bg ~/Pictures/wallpapers/mountain.jpg fill
+exec_always bash ~/scripts/autobg.sh
+# exec_always bash ~/scripts/rndbg.sh
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running:  swaymsg -t get_outputs
+output DP-1 resolution 1920x1080 position 0,0
+# output HDMI-A-1 resolution 1920x1080 position 0,0
+
+# might test 
+# output HDMI-A-1 res 1920x1080
+# output DP-1 layout none mirror HDMI-A-1
+
+### Idle configuration
+
+exec swayidle -w \
+          timeout 240 'bash $HOME/scripts/lock.sh' \
+          before-sleep 'bash $HOME/scripts/lock.sh'
+
+
+### Manual Lock
+bindsym $mod+l exec 'bash $HOME/scripts/lock.sh'
+
+### configuration
+#
+# Example configuration:
+#
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+input * {
+        xkb_layout "fr"
+}
+
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ #increase sound volume
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- #decrease sound volume
+bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle # mute sound
+### Key bindings
+#
+# Basics:
+#
+    # Start a terminal
+    bindsym $mod+Return exec $term
+
+    # Kill focused window
+    bindsym $mod+Shift+q kill
+
+    # Start your launcher
+    bindsym $mod+d exec $menurun
+    bindsym Mod1+Space exec $menu # Alt+space
+    
+    # Launch thunar
+    bindsym $mod+m exec thunar
+
+    #web browser
+    bindsym $mod+n exec $web_browser
+
+    # Drag floating windows by holding down $mod and left mouse button.
+    # Resize them with right mouse button + $mod.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    floating_modifier $mod normal
+
+    # Reload the configuration file
+    bindsym $mod+Shift+c reload
+
+    # Exit sway (logs you out of your Wayland session)
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+#
+# Moving around:
+#
+    # Move your focus around
+    bindsym $mod+Left focus left
+    bindsym $mod+Down focus down
+    bindsym $mod+Up focus up
+    bindsym $mod+Right focus right
+
+    # Move the focused window with the same, but add Shift
+    bindsym $mod+Shift+Left move left
+    bindsym $mod+Shift+Down move down
+    bindsym $mod+Shift+Up move up
+    bindsym $mod+Shift+Right move right
+#
+
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $mod+b or $mod+v, for horizontal and vertical splits
+    # respectively.
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
+
+    # Switch the current container between different layout styles
+    bindsym $mod+s layout stacking
+    bindsym $mod+w layout tabbed
+    bindsym $mod+e layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+
+    # Move focus to the parent container
+    bindsym $mod+a focus parent
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+exclam move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+exclam scratchpad show
+
+
+# bindsym $mod+o mode "$mode_launcher"
+# 
+# mode "$mode_launcher" {
+#     bindsym m exec terminator
+#     bindsym n exec nautilus
+#     bindsym v exec virt-manager 
+#     bindsym d exec deepin-screenshot 
+#     bindsym Return mode "default"
+# }
+
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+    swaybar_command waybar
+    }
+
+# # class                     border  backgr. text  indicator child_border
+ #   client.focused          #4c7899 #285577 #ffffff #3dffe9 #3dffe9
+    client.focused_inactive #333333 #5f676a #ffffff #484e50 #5f676a
+    client.unfocused        #333333 #222222 #888888 #292d2e #222222
+    client.urgent           #2f343a #900000 #ffffff #900000 #900000 
+
+#color focused client
+client.focused          #000000 #cc66cc #000000 #cc66cc #cc66cc 
+include ~/.config/sway/config.d/*

@@ -1,0 +1,50 @@
+# Workspaces:
+#
+set $ws1 workspace 1
+set $ws2 workspace 2
+set $ws3 workspace 3
+set $ws4 workspace 4
+set $ws5 workspace 5
+set $ws6 workspace 6
+set $ws7 workspace 7
+set $ws8 workspace 8
+set $ws9 workspace 9
+set $ws0 workspace 0
+# Switch to workspace
+
+bindsym $mod+ampersand $ws1
+bindsym $mod+eacute $ws2
+bindsym $mod+quotedbl $ws3
+bindsym $mod+apostrophe $ws4
+bindsym $mod+parenleft $ws5
+bindsym $mod+minus $ws6
+bindsym $mod+egrave $ws7
+bindsym $mod+underscore $ws8
+bindsym $mod+ccedilla  $ws9
+bindsym $mod+agrave $ws0
+
+# Move focused container to workspace
+bindsym $mod+Shift+ampersand move container to $ws1
+bindsym $mod+Shift+eacute move container to $ws2
+bindsym $mod+Shift+quotedbl move container to $ws3
+bindsym $mod+Shift+apostrophe move container to $ws4
+bindsym $mod+Shift+parenleft move container to $ws5
+bindsym $mod+Shift+minus move container to $ws6
+bindsym $mod+Shift+egrave move container to $ws7
+bindsym $mod+Shift+underscore move container to $ws8
+bindsym $mod+Shift+ccedilla move container to $ws9
+bindsym $mod+Shift+agrave move container to $ws0
+# Note: workspaces can have any name you want, not just numbers.
+# We just use 1-10 as the default.
+
+# Move focused container to workspace and switch to workspace
+bindsym $mod+Ctrl+ampersand move container to $ws1; $ws1
+bindsym $mod+Ctrl+eacute move container to $ws2; $ws2
+bindsym $mod+Ctrl+quotedbl move container to $ws3; $ws3
+bindsym $mod+Ctrl+apostrophe move container to $ws4; $ws4
+bindsym $mod+Ctrl+parenleft move container to $ws5; $ws5
+bindsym $mod+Ctrl+minus move container to $ws6; $ws6
+bindsym $mod+Ctrl+egrave move container to $ws7; $ws7
+bindsym $mod+Ctrl+underscore move container to $ws8; $ws8
+bindsym $mod+Ctrl+ccedilla move container to $ws9; $ws9
+bindsym $mod+Ctrl+agrave move container to $ws0; $ws0

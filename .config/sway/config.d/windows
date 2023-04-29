@@ -1,0 +1,26 @@
+# centered tray menu waybar issue
+# look at https://github.com/Alexays/Waybar/issues/63
+for_window [app_id="waybar" floating] {
+  move position 1750 0
+}
+
+# default floating windows
+# for_window [app_id="xxx"] floating enable
+# for_window [app_id="galculator"] floating enable
+# for_window [window_type="dialog"] floating enable
+# for_window [window_role="dialog"] floating enable
+# get ids with swaymsg -t get_tree | less
+
+for_window [app_id="ulauncher"] floating enable
+for_window [app_id="CopyQ"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+
+for_window [window_role="task_dialog|bubble|page-info|Preferences|pop-up"] floating enable
+for_window [window_role="Open Files"] floating enable sticky
+for_window [window_role="File Operation Progress"] floating enable sticky
+for_window [window_role="Save As"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
