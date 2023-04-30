@@ -13,18 +13,7 @@ set $mod Mod4
 # Your preferred apps
 set $term alacritty
 set $web_browser vivaldi
-set $file_manager nautilus
-
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-set $menu wofi --show drun -I | xargs swaymsg exec --
-set $menurun wofi --show run -I | xargs swaymsg exec --
-
-# Icon and cursor theme
-set $gnome-schema org.gnome.desktop.interface
-exec_always gsettings set $gnome-schema cursor-theme "Future-cyan-cursors"
-exec_always gsettings set $gnome-schema icon-theme "Papirus"
+set $file_manager nautilus -w ~
 
 # Set Gaps
 gaps inner 5px
