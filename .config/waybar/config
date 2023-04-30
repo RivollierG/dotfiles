@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 40,
+    "height": 42,
     "margin": "20 30 0 30",
     "margin-top": 4,
     "margin-left": 4,
@@ -14,7 +14,6 @@
         "sway/scratchpad",
         "sway/workspaces",
         "sway/window"
-
     ],
     "modules-right": [
         "tray",
@@ -32,23 +31,18 @@
         "custom/weather",
         "custom/power"
     ],
-
     "bluetooth": {
-        
         "format": "",
         "on-click": "bluetooth toggle"
     },
-
     "sway/scratchpad": {
-
         "format": "{icon}  {count}",
         "show-empty": true,
-        "format-icons": "",    
+        "format-icons": "",
         "tooltip": true,
         "tooltip-format": "{app}: {title}",
         "on-click": "exec swaymsg 'scratchpad show'"
     },
-
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -63,7 +57,8 @@
             "7": "",
             "urgent": "",
             "focused": "",
-            "default": ""},
+            "default": ""
+        },
         "persistent_workspaces": {
             "1": [],
             "2": [],
@@ -74,54 +69,47 @@
             "7": []
         }
     },
-
     "sway/window": {
         "format": "{app_id}",
         "icon": true
-        },
-
+    },
     "sway/mode": {
         "format": "  {}"
     },
-    
     "keyboard-state": {
+        // user need to be in the input group
+        // sudo usermod guillaume -aG input && reboot
         "numlock": true,
         "capslock": true,
         "format": {
-            "numlock": "N {icon}",
-            "capslock": "C {icon}"                                                                                                                                                       
+            "numlock": "󰎦 {icon}",
+            "capslock": "󰪛 {icon} "
         },
         "format-icons": {
             "locked": "",
-            "unlocked": ""
+            "unlocked": ""
         }
     },
-
     "custom/clipboard": {
         "format": "󱉫",
-        "on-click": "exec clipman pick --tool CUSTOM --tool-args \"wofi -p 'Selectionnez une précédente entrée' -dmenu\"",
+        "on-click": "exec clipman pick --tool CUSTOM --tool-args \"wofi -p 'Sélectionnez une précédente entrée' -dmenu\"",
         "interval": "once",
         "tooltip": false
     },
-
     "tray": {
         "icon-size": 20,
         "spacing": 10
     },
-
     "clock": {
         "format": "{:%A %d %B %H:%M}",
         "format-alt": "{:%H:%M}"
     },
-
     "custom/power": {
         "format": "",
         "on-click": "exec bash ~/scripts/power.sh",
         "interval": "once",
         "tooltip": false
-
     },
-
     "custom/weather": {
         "exec": "bash ~/scripts/get_weather.sh Grenoble+France",
         "return-type": "json",
@@ -129,11 +117,9 @@
         "tooltip": true,
         "interval": 3600
     },
-
     "cpu": {
         "format": "{usage:2}% 󰍛"
     },
-
     "memory": {
         "interval": 30,
         "format": "{used:0.1f}/{total:0.1f} "
@@ -146,8 +132,13 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
     "battery#bat1": {
         "bat": "BAT1",
@@ -157,8 +148,13 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -173,7 +169,6 @@
         "format-disconnected": "Disconnected ⚠"
     },
     "pulseaudio": {
-
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
         "format-muted": "󰝟",
@@ -184,7 +179,10 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", ""]
+            "default": [
+                "",
+                ""
+            ]
         },
         "on-click": "pavucontrol"
     }

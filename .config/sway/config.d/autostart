@@ -5,11 +5,11 @@
 exec_always mako
 exec keepassxc
 
-exec_always /usr/bin/python ~/scripts/autotiling.py --limit 2
+exec_always ~/scritps/autotiling.py --limit 2
 
 
 
 # https://www.reddit.com/r/swaywm/comments/ljl0dh/keeping_secrets_secret_with_keepassxc_clipman_and/
 
 # watched the clipboard and sends any new item to 'myclipman'
-exec_always wl-paste -t text --watch bash ~/scripts/myclipman.sh
+exec_always wl-paste -t text --watch ~/scripts/myclipman.sh

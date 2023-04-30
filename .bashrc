@@ -19,11 +19,6 @@ fi
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 source ~/scripts/extract.sh
 
-# Manage dotfiles
-# https://fwuensche.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b
-alias dotfiles='/usr/bin/git --git-dir=/home/guillaume/.dotfiles/ --work-tree=/home/guillaume'
-
-
 # Shell color script from Derek Taylor
 # https://gitlab.com/dwt1/shell-color-scripts
 # https://copr.fedorainfracloud.org/coprs/foopsss/shell-color-scripts/

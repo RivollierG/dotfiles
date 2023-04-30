@@ -10,8 +10,6 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-
-
 # Git aliases
 alias gaa='git add --all -v'
 alias gs='git status'
@@ -25,6 +23,10 @@ alias venv='source ./venv/bin/activate'
 # ls aliases
 alias ls='LC_COLLATE=C ls -aCFh --group-directories-first --color=auto'
 alias ll='ls -l'
+
+# Manage dotfiles
+# https://fwuensche.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Other
 alias bat='bat --theme=ansi'

@@ -34,13 +34,7 @@ default_floating_border none
 
 
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 
-# output * bg ~/Pictures/wallpapers/mountain.jpg fill
-exec_always bash ~/scripts/autobg.sh
-# exec_always bash ~/scripts/rndbg.sh
-#
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -56,12 +50,12 @@ output DP-1 resolution 1920x1080 position 0,0
 ### Idle configuration
 
 exec swayidle -w \
-          timeout 240 'bash $HOME/scripts/lock.sh' \
-          before-sleep 'bash $HOME/scripts/lock.sh'
+    timeout 240 '$HOME/scripts/lock.sh' \
+    before-sleep '$HOME/scripts/lock.sh'
 
 
 ### Manual Lock
-bindsym $mod+l exec 'bash $HOME/scripts/lock.sh'
+bindsym $mod+l exec '$HOME/scripts/lock.sh'
 
 ### configuration
 #
@@ -192,7 +186,7 @@ bar {
     }
 
 # # class                     border  backgr. text  indicator child_border
- #   client.focused          #4c7899 #285577 #ffffff #3dffe9 #3dffe9
+#   client.focused          #4c7899 #285577 #ffffff #3dffe9 #3dffe9
     client.focused_inactive #333333 #5f676a #ffffff #484e50 #5f676a
     client.unfocused        #333333 #222222 #888888 #292d2e #222222
     client.urgent           #2f343a #900000 #ffffff #900000 #900000 

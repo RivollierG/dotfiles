@@ -1,8 +1,5 @@
 #!/bin/bash
 
-
-
-
 # Lock screen immediately
 swaylock --image ~/Pictures/wallpapers/sunset.jpg
 
