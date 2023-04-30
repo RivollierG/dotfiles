@@ -1,10 +1,10 @@
-@define-color base           #1e242f ;
-@define-color urgent         #b02c36 ;
-@define-color primary_orange #fe9000 ;
-@define-color primary_yellow #ffdd4a ;
-@define-color primary_red    #da1b2b ;
-@define-color primary_blue   #afd2e9 ;
-@define-color primary_blue_2 #6fadd6 ;
+@define-color base #1e242f;
+@define-color urgent #b02c36;
+@define-color primary_orange #fe9000;
+@define-color primary_yellow #ffdd4a;
+@define-color primary_red #da1b2b;
+@define-color primary_blue #afd2e9;
+@define-color primary_blue_2 #6fadd6;
 
 @keyframes blink-warning {
     70% {
@@ -19,7 +19,7 @@
 
 @keyframes blink-critical {
     70% {
-      color: white;
+        color: white;
     }
 
     to {
@@ -37,7 +37,7 @@
     border: none;
     border-radius: 0;
     min-height: 0;
-    margin: 1px;
+    margin: 0;
     padding: 0;
     font-family: "Fira Code Nerd Font";
 }
@@ -52,33 +52,103 @@
 }
 
 /* Every modules */
-
-#sway-workspaces,
 #sway-scratchpad,
+#sway-workspaces,
 #sway-window,
-#keyboard-state,
-#custom-clipboard,
-#custom-power,
-#battery,
-#clock,
-#backlight,
-#cpu,
-#custom-keyboard-layout,
-#memory,
-#mode,
-#custom-weather,
-#network,
-#pulseaudio,
-#temperature,
+#sway-mode,
 #tray,
-#idle_inhibitor{
-    padding:0.6rem 0.6rem;
-    margin: 1px 0px;
+#custom-clipboard,
+#idle_inhibitor,
+#keyboard-state,
+#pulseaudio,
+#network,
+/* #battery,
+#bluetooth, */
+#cpu,
+#memory,
+#clock,
+#custom-weather,
+#custom-power {
+    padding: 0px 10px 0px 10px;
+    background: transparent;
 }
 
 /* -----------------------------------------------------------------------------
- * Modules styles
+ * Modules Right
  * -------------------------------------------------------------------------- */
+
+#scratchpad {
+    border-right: 1px solid;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#workspaces {
+    font-size: 16px;
+    border-right: 1px solid;
+    padding-right: 10px;
+}
+
+#workspaces button {
+    /*    border-bottom: 3px solid @primary_blue_2;*/
+    margin: 4px 0;
+    padding: 0 6px;
+    color: #ffffff;
+}
+
+#workspaces button.focused {
+    /*     border: 1px solid  @primary_yellow; */
+    /*     border-radius: 20px; */
+    color: @primary_yellow;
+}
+
+#workspaces button:hover {
+    border-top: none;
+    /*     border-radius: 20px; */
+    color: @primary_blue;
+    background: transparent;
+}
+
+
+#workspaces button.urgent {
+    border-color: @primary_red;
+    color: @primary_red;
+}
+
+#window {
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+/* -----------------------------------------------------------------------------
+ * Modules Center
+ * -------------------------------------------------------------------------- */
+
+/* -----------------------------------------------------------------------------
+ * Modules Left
+ * -------------------------------------------------------------------------- */
+
+#idle_inhibitor.activated {
+    color: @primary_orange;
+}
+
+#keyboard-state label.locked {
+    color: @primary_orange;
+}
+
+#pulseaudio.input.source-muted {
+    color: @primary_red;
+    font-size: 16px;
+}
+
+#pulseaudio.output.muted {
+    color: @primary_red;
+    font-size: 16px;
+}
+
+#network.disconnected {
+    color: @primary_orange;
+}
 
 #battery {
     animation-timing-function: linear;
@@ -120,91 +190,14 @@
 
 #memory.warning {
     color: @primary_orange;
- }
+}
 
 #memory.critical {
     color: red;
     animation-name: blink-critical;
     animation-duration: 2s;
-    padding-left:5px;
-    padding-right:5px;
-}
-
-#mode {
-
-    border-bottom: 3px @primary_blue;
-    color: white;
-    margin-left: 5px;
-    padding: 7px;
-    border-radius: 5em;
-}
-
-#network.disconnected {
-    color: @primary_orange;
-}
-
-#pulseaudio {
-    padding-top:6px;
-}
-
-#pulseaudio.muted {
-    color: @primary_red;
-    font-size: 16px;
-}
-
-#temperature.critical {
-    color: red;
-}
-
-#window {
-    font-weight: bold;
-}
-
-#workspaces {
-    font-size:16px;
-    border-right: 1px solid;
-    padding-right: 10px;
-}
-
-#workspaces button {
-/*    border-bottom: 3px solid @primary_blue_2;*/
-    margin: 4px 0;
-    padding: 0 6px;
-    color: #ffffff;
-}
-
-#workspaces button.focused {
-/*     border: 1px solid  @primary_yellow; */
-/*     border-radius: 20px; */
-    color: @primary_yellow;
-}
-
-#workspaces button:hover {
-    border: none;
-/*     border-radius: 20px; */
-    color: @primary_blue;
-    background: transparent;
-}
-
-
-#workspaces button.urgent {
-    border-color: @primary_red;
-    color: @primary_red;
-}
-
-#backlight.icon {
-    padding-right:1px;
-    font-size: 13px;
-}
-
-#scratchpad {
-    border-right: 1px solid;
-    padding-right: 10px;
-    padding-left: 10px;
-}
-
-#window {
-    padding-left: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #custom-power {

@@ -7,34 +7,30 @@
     "margin-left": 4,
     "margin-right": 4,
     "margin-bottom": 4,
-    "modules-center": [
-        "sway/mode"
-    ],
     "modules-left": [
         "sway/scratchpad",
         "sway/workspaces",
         "sway/window"
+    ],
+    "modules-center": [
+        "sway/mode"
     ],
     "modules-right": [
         "tray",
         "custom/clipboard",
         "idle_inhibitor",
         "keyboard-state",
-        "pulseaudio",
+        "pulseaudio#output",
+        "pulseaudio#input",
         "network",
-        "battery",
-        "battery#bat1",
-        "bluetooth",
+        // "battery",
+        // "bluetooth",
         "cpu",
         "memory",
         "clock",
         "custom/weather",
         "custom/power"
     ],
-    "bluetooth": {
-        "format": "",
-        "on-click": "bluetooth toggle"
-    },
     "sway/scratchpad": {
         "format": "{icon}  {count}",
         "show-empty": true,
@@ -76,6 +72,23 @@
     "sway/mode": {
         "format": "  {}"
     },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10
+    },
+    "custom/clipboard": {
+        "format": "󱉫",
+        "on-click": "exec clipman pick --tool CUSTOM --tool-args \"wofi -p 'Sélectionnez une précédente entrée' -dmenu\"",
+        "interval": "once",
+        "tooltip": false
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰒳",
+            "deactivated": "󰒲"
+        }
+    },
     "keyboard-state": {
         // user need to be in the input group
         // sudo usermod guillaume -aG input && reboot
@@ -90,39 +103,39 @@
             "unlocked": ""
         }
     },
-    "custom/clipboard": {
-        "format": "󱉫",
-        "on-click": "exec clipman pick --tool CUSTOM --tool-args \"wofi -p 'Sélectionnez une précédente entrée' -dmenu\"",
-        "interval": "once",
-        "tooltip": false
+    "pulseaudio#output": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                ""
+            ]
+        },
+        "on-click": "pactl set-sink-mute 0 toggle",
+        "on-click-right": "pavucontrol"
     },
-    "tray": {
-        "icon-size": 20,
-        "spacing": 10
+    "pulseaudio#input": {
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format": "{format_source}",
+        "on-click": "pactl set-source-mute 0 toggle",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "pactl set-source-volume 0 +1%",
+        "on-scroll-down": "pactl set-source-volume 0 -1%",
+        "max-volume": 100
     },
-    "clock": {
-        "format": "{:%A %d %B %H:%M}",
-        "format-alt": "{:%H:%M}"
-    },
-    "custom/power": {
-        "format": "",
-        "on-click": "exec bash ~/scripts/power.sh",
-        "interval": "once",
-        "tooltip": false
-    },
-    "custom/weather": {
-        "exec": "bash ~/scripts/get_weather.sh Grenoble+France",
-        "return-type": "json",
-        "format": "{}",
-        "tooltip": true,
-        "interval": 3600
-    },
-    "cpu": {
-        "format": "{usage:2}% 󰍛"
-    },
-    "memory": {
-        "interval": 30,
-        "format": "{used:0.1f}/{total:0.1f} "
+    "network": {
+        "format-wifi": "{signalStrength}% ",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "Disconnected ⚠"
     },
     "battery": {
         "bat": "BAT0",
@@ -140,50 +153,32 @@
             ""
         ]
     },
-    "battery#bat1": {
-        "bat": "BAT1",
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
+    "bluetooth": {
+        "format": "",
+        "on-click": "bluetooth toggle"
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "󰒳",
-            "deactivated": "󰒲"
-        }
+    "cpu": {
+        "format": "{usage:2}% 󰍛"
     },
-    "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname} 󰈀",
-        "format-disconnected": "Disconnected ⚠"
+    "memory": {
+        "interval": 30,
+        "format": "{used:0.1f}/{total:0.1f} "
     },
-    "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "󰝟",
-        "format-icons": {
-            "headphones": "",
-            "handsfree": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                ""
-            ]
-        },
-        "on-click": "pavucontrol"
+    "clock": {
+        "format": "{:%A %d %B %H:%M}",
+        "format-alt": "{:%H:%M}"
+    },
+    "custom/weather": {
+        "exec": "~/scripts/get_weather.sh Grenoble+France",
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true,
+        "interval": 3600
+    },
+    "custom/power": {
+        "format": "",
+        "on-click": "exec bash ~/scripts/power.sh",
+        "interval": "once",
+        "tooltip": false
     }
 }
