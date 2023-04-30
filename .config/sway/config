@@ -10,17 +10,21 @@
 set $mod Mod4
 
 
-# Your preferred terminal emulator
+# Your preferred apps
 set $term alacritty
+set $web_browser vivaldi
+set $file_manager nautilus
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu wofi --show drun -I | xargs swaymsg exec --
 set $menurun wofi --show run -I | xargs swaymsg exec --
-# set $gnome-schema org.gnome.desktop.interface
 
-set $web_browser vivaldi
+# Icon and cursor theme
+set $gnome-schema org.gnome.desktop.interface
+exec_always gsettings set $gnome-schema cursor-theme "Future-cyan-cursors"
+exec_always gsettings set $gnome-schema icon-theme "Papirus"
 
 # Set Gaps
 gaps inner 5px
@@ -95,7 +99,7 @@ bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle # mute sound
     bindsym Mod1+Space exec $menu # Alt+space
     
     # Launch thunar
-    bindsym $mod+m exec thunar
+    bindsym $mod+m exec $file_manager
 
     #web browser
     bindsym $mod+n exec $web_browser
