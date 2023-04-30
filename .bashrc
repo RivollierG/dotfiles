@@ -12,11 +12,16 @@ then
 fi
 export PATH
 
+# Load aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# Use bat as manpager
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
+
+# source various scripts
 source ~/scripts/extract.sh
 
 # Shell color script from Derek Taylor
@@ -25,14 +30,14 @@ source ~/scripts/extract.sh
 ### RANDOM COLOR SCRIPT ###
 colorscript random
 
-
-#Starship prompt
+### Prompt format ###
+# Starship prompt
 # https://starship.rs/guide/
 
 eval "$(starship init bash)"
 
+# OhMyPosh prompt
 
 #set VIRTUAL_ENV_DISABLE_PROMPT = true
 #export VIRTUAL_ENV_DISABLE_PROMPT
 # eval "$(oh-my-posh init bash --config ~/.config/OhMyPosh.yml)"
-
