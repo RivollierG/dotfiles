@@ -16,6 +16,10 @@ For sway and waybar workflow.
 You can use another terminal than alacritty, just change the following line accordingly in .config/sway/config `set $term alacritty`  
 There is no need to use the starship or the ohmyposh prompt, if you prefer you can comment the lines in .bashrc `eval "$(starship init bash)"` or `eval "$(oh-my-posh init bash --config ~/.config/OhMyPosh.yml)"`. In any case you only need one of the two prompt customizers.  
 
+## Default applications
+
+In the same vein you can change the terminal application, you can also modify other default application (web browser, file manager, app launcher, ...).  
+
 ## Font
 
 You can use another font, but lot of icon are from Nerd Fonts, so please change for another nerd font.  
