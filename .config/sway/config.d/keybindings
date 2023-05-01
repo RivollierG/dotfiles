@@ -1,0 +1,62 @@
+### Basics ###
+
+# Start a terminal
+bindsym $mod+Return exec $term
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Start your launcher
+bindsym $mod+d exec $menurun
+bindsym Mod1+Space exec $menu # Alt+space
+
+# Launch thunar
+bindsym $mod+m exec $file_manager
+
+#web browser
+bindsym $mod+n exec $web_browser
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+# Moving around:
+
+# Move your focus around
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+### Audio and brightness ###
+
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ #increase sound volume
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- #decrease sound volume
+bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle # mute sound
+
+### Launch personnal scripts ###
+
+bindsym $mod+g exec ~/scripts/show_sway_windows.py
+
+### Free Deck shortcuts ###
+
+# see https://github.com/freeyourstream/freedeck-wiki/wiki
+

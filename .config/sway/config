@@ -9,11 +9,18 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
-
 # Your preferred apps
 set $term alacritty
 set $web_browser vivaldi
 set $file_manager nautilus -w ~
+set $menu wofi --show drun -I | xargs swaymsg exec --
+set $menurun wofi --show run -I | xargs swaymsg exec --
+
+# Icon and cursor theme
+set $gnome-schema org.gnome.desktop.interface
+exec_always gsettings set $gnome-schema cursor-theme "Future-cyan-cursors"
+exec_always gsettings set $gnome-schema icon-theme "Papirus"
+
 
 # Set Gaps
 gaps inner 5px
@@ -67,59 +74,7 @@ input * {
         xkb_layout "fr"
 }
 
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
-bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ #increase sound volume
-bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- #decrease sound volume
-bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle # mute sound
-### Key bindings
-#
-# Basics:
-#
-    # Start a terminal
-    bindsym $mod+Return exec $term
-
-    # Kill focused window
-    bindsym $mod+Shift+q kill
-
-    # Start your launcher
-    bindsym $mod+d exec $menurun
-    bindsym Mod1+Space exec $menu # Alt+space
-    
-    # Launch thunar
-    bindsym $mod+m exec $file_manager
-
-    #web browser
-    bindsym $mod+n exec $web_browser
-
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
-    floating_modifier $mod normal
-
-    # Reload the configuration file
-    bindsym $mod+Shift+c reload
-
-    # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
-#
-# Moving around:
-#
-    # Move your focus around
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
-
-    # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
-#
 
 #
 # Layout stuff:
