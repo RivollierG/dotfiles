@@ -5,6 +5,9 @@
 exec_always mako
 exec keepassxc
 
+# Allow x window for other user (root)
+exec_always xhost + local:
+
 exec_always ~/scripts/autotiling.py --limit 2
 
 

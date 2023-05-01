@@ -21,6 +21,9 @@ fi
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 
+# In order to use sudo -A for gui password auth: 
+export SUDO_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+
 # source various scripts
 source ~/scripts/extract.sh
 

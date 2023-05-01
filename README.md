@@ -46,6 +46,14 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles checkout
 ```
 
+
+## Add user to groups
+
+In order to make things work, the user must be add to somes groups
+```bash
+sudo usermod -aG input $USER # allow access to keyboard event (required by keyboard state indicator)
+sudo usermod -aG dialout $USER # allow reading and writing over serial connection
+```
 ## Disclaimer
 
 This is mainly a bunch of code and stuff made by other people, and I do not intended to take ownership of the work of others.  
