@@ -50,8 +50,8 @@ bindsym $mod+Shift+Right move right
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
-bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ #increase sound volume
-bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- #decrease sound volume
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle # mute sound
 
 ### Launch personnal scripts ###

@@ -138,17 +138,17 @@
                 ""
             ]
         },
-        "on-click": "pactl set-sink-mute 0 toggle",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "pavucontrol"
     },
     "pulseaudio#input": {
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format": "{format_source}",
-        "on-click": "pactl set-source-mute 0 toggle",
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "on-click-right": "pavucontrol",
-        "on-scroll-up": "pactl set-source-volume 0 +1%",
-        "on-scroll-down": "pactl set-source-volume 0 -1%",
+        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
         "max-volume": 100
     },
     "network": {
