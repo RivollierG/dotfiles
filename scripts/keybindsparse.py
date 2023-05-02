@@ -67,7 +67,7 @@ extrakey = {
     "ccedilla": "ç",
     "agrave": "à",
     "Mod1": "Alt",
-    "Mod4": "",
+    "Mod4": "Super",
     "semicolon": ";",
     "XF86MonBrightnessUp": "󰃠",
     "XF86MonBrightnessDown": "󰃞",
@@ -119,48 +119,13 @@ if __name__ == "__main__":
         files.sort()
 
         for file in files:
-            print(file, file=sys.stderr)
             parse_file(os.path.join(path, file))
 
     sets = OrderedDict({**sets, **extrakey})
 
-    res = """---
-title:  Sway Keybindings
-geometry: margin=0.2cm
-mainfont: FiraCode Nerd Font
-monofont: FiraCode Nerd Font Mono
-classoption: portrait
-output:
-  pdf_document:
-    latex_engine: xelatex
----
-
-"""
-
-    res += f"as defined in {root_path}\n\n"
-    res += "Asterisk (*) indicate a sway specific command\n\n"
-    res += "|Key| |Command|\n"
-    res += "|:---|-:|:-----------|\n"
-    for key, command in bindsyms.items():
-        hk = str(key)
-        instr = ""
-        cmd = str(command)
-        for setkey, setvalue in sets.items():
-            hk = hk.replace(setkey, setvalue)
-            hk = hk.replace("space", "󱁐")
-            cmd = cmd.replace(setkey, setvalue)
-
-        hk = "+".join([f"`{i}`" for i in hk.split("+")])
-        cmd = f"`{cmd}`"
-
-        if cmd.startswith("`exec "):
-            cmd = cmd.replace("exec ", "")
-        else:
-            instr += "*"
-        res += f"|{hk}|{instr}|{cmd}|\n"
-
     offset = 5 * " "
     txt = f"\n{offset}Sway kinbindings as defined in {root_path}\n\n"
+    txt += f"{offset}Super is the Win () or command (󰘳) key\n"
     txt += f"{offset}Asterisk (*) indicate a sway specific command\n\n\n"
     txt += f"{offset}{'     Key'.ljust(27)}Command\n\n"
 

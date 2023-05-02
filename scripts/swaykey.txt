@@ -1,86 +1,87 @@
 
      Sway kinbindings as defined in /home/guillaume/.config/sway/config
 
+     Super is the Win () or command (󰘳) key
      Asterisk (*) indicate a sway specific command
 
 
           Key                   Command
 
-     +󰌑                   alacritty
-     +d                   wofi --show run -I | xargs swaymsg --
+     Super+󰌑               alacritty
+     Super+d               wofi --show run -I | xargs swaymsg --
      Alt+󱁐                 wofi --show drun -I | xargs swaymsg --
-     +m                   nautilus -w ~
-     +ù                   alacritty -e ranger
-     +n                   vivaldi
-     +l                   ~/scripts/lock.sh
-     +?                   alacritty -t HelpSwayKey -e less ~/scripts/swaykey.txt...
+     Super+m               nautilus -w ~
+     Super+ù               alacritty -e ranger
+     Super+n               vivaldi
+     Super+l               ~/scripts/lock.sh
+     Super+?               alacritty -t HelpSwayKey -e less ~/scripts/swaykey.txt...
      Print                 grim -g "$(slurp)" ~/Pictures/screenshots/$(date+"%Y%m...
-     +Shift+q           * kill
-     +Shift+c           * reload
-     +Shift+e             swaynag -t warning -m 'Exit sway and end your Wayland ...
-     +g                   ~/scripts/show_sway_windows.py
-     +                 * focus left
-     +                 * focus down
-     +                 * focus up
-     +                 * focus right
-     +Shift+           * move left
-     +Shift+           * move down
-     +Shift+           * move up
-     +Shift+           * move right
+     Super+Shift+q       * kill
+     Super+Shift+c       * reload
+     Super+Shift+e         swaynag -t warning -m 'Exit sway and end your Wayland ...
+     Super+g               ~/scripts/show_sway_windows.py
+     Super+             * focus left
+     Super+             * focus down
+     Super+             * focus up
+     Super+             * focus right
+     Super+Shift+       * move left
+     Super+Shift+       * move down
+     Super+Shift+       * move up
+     Super+Shift+       * move right
      󰃠                     brightnessctl set+5%
      󰃞                     brightnessctl set -5%
      󰝝                     pactl set-sink-volume @DEFAULT_SINK@+5%
      󰝞                     pactl set-sink-volume @DEFAULT_SINK@ -5%
      󰝟                     pactl set-sink-mute @DEFAULT_SINK@ toggle
-     +b                 * splith
-     +v                 * splitv
-     +s                 * layout stacking
-     +w                 * layout tabbed
-     +e                 * layout toggle split
-     +f                 * fullscreen
-     +Shift+󱁐           * floating toggle
-     +󱁐                 * focus mode_toggle
-     +a                 * focus parent
-     +Shift+!           * move scratchpad
-     +!                 * scratchpad show
-     +Shift+o             ~/scripts/power.sh
-     +r                 * mode "resize"
+     Super+b             * splith
+     Super+v             * splitv
+     Super+s             * layout stacking
+     Super+w             * layout tabbed
+     Super+e             * layout toggle split
+     Super+f             * fullscreen
+     Super+Shift+󱁐       * floating toggle
+     Super+󱁐             * focus mode_toggle
+     Super+a             * focus parent
+     Super+Shift+!       * move scratchpad
+     Super+!             * scratchpad show
+     Super+Shift+o         ~/scripts/power.sh
+     Super+r             * mode "resize"
      [mode "resize"]    * resize shrink width 10px
      [mode "resize"]    * resize grow height 10px
      [mode "resize"]    * resize shrink height 10px
      [mode "resize"]    * resize grow width 10px
      [mode "resize"] 󰌑   * mode "default"
      [mode "resize"] Esc * mode "default"
-     +&                 * workspace 1
-     +é                 * workspace 2
-     +"                 * workspace 3
-     +'                 * workspace 4
-     +(                 * workspace 5
-     +-                 * workspace 6
-     +è                 * workspace 7
-     +_                 * workspace 8
-     +ç                 * workspace 9
-     +à                 * workspace 0
-     +Shift+&           * move container to workspace 1
-     +Shift+é           * move container to workspace 2
-     +Shift+"           * move container to workspace 3
-     +Shift+'           * move container to workspace 4
-     +Shift+(           * move container to workspace 5
-     +Shift+-           * move container to workspace 6
-     +Shift+è           * move container to workspace 7
-     +Shift+_           * move container to workspace 8
-     +Shift+ç           * move container to workspace 9
-     +Shift+à           * move container to workspace 0
-     +Ctrl+&            * move container to workspace 1; workspace 1
-     +Ctrl+é            * move container to workspace 2; workspace 2
-     +Ctrl+"            * move container to workspace 3; workspace 3
-     +Ctrl+'            * move container to workspace 4; workspace 4
-     +Ctrl+(            * move container to workspace 5; workspace 5
-     +Ctrl+-            * move container to workspace 6; workspace 6
-     +Ctrl+è            * move container to workspace 7; workspace 7
-     +Ctrl+_            * move container to workspace 8; workspace 8
-     +Ctrl+ç            * move container to workspace 9; workspace 9
-     +Ctrl+à            * move container to workspace 0; workspace 0
+     Super+&             * workspace 1
+     Super+é             * workspace 2
+     Super+"             * workspace 3
+     Super+'             * workspace 4
+     Super+(             * workspace 5
+     Super+-             * workspace 6
+     Super+è             * workspace 7
+     Super+_             * workspace 8
+     Super+ç             * workspace 9
+     Super+à             * workspace 0
+     Super+Shift+&       * move container to workspace 1
+     Super+Shift+é       * move container to workspace 2
+     Super+Shift+"       * move container to workspace 3
+     Super+Shift+'       * move container to workspace 4
+     Super+Shift+(       * move container to workspace 5
+     Super+Shift+-       * move container to workspace 6
+     Super+Shift+è       * move container to workspace 7
+     Super+Shift+_       * move container to workspace 8
+     Super+Shift+ç       * move container to workspace 9
+     Super+Shift+à       * move container to workspace 0
+     Super+Ctrl+&        * move container to workspace 1; workspace 1
+     Super+Ctrl+é        * move container to workspace 2; workspace 2
+     Super+Ctrl+"        * move container to workspace 3; workspace 3
+     Super+Ctrl+'        * move container to workspace 4; workspace 4
+     Super+Ctrl+(        * move container to workspace 5; workspace 5
+     Super+Ctrl+-        * move container to workspace 6; workspace 6
+     Super+Ctrl+è        * move container to workspace 7; workspace 7
+     Super+Ctrl+_        * move container to workspace 8; workspace 8
+     Super+Ctrl+ç        * move container to workspace 9; workspace 9
+     Super+Ctrl+à        * move container to workspace 0; workspace 0
      Ctrl+Alt+Shift+y      codium
      Ctrl+Alt+Shift+c      code
      Ctrl+Alt+Shift+u      rstudio
