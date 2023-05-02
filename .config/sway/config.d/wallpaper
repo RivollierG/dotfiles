@@ -1,9 +1,0 @@
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-
-# output * bg ~/Pictures/wallpapers/mountain.jpg fill
-
-exec ~/scripts/autobg.sh
-
-# exec ~/scripts/rndbg.sh
-#

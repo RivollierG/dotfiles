@@ -1,0 +1,68 @@
+# Sway keybindings
+### Basics ###
+
+# Start a terminal
+bindsym $mod+Return exec $term
+
+# Start your launcher
+bindsym $mod+d exec $menurun
+bindsym Mod1+Space exec $menudesktop
+
+# Launch File mangers
+bindsym $mod+m exec $file_manager_main
+bindsym $mod+ugrave exec $file_manager_bis
+
+# Web browser
+bindsym $mod+n exec $web_browser
+
+# Manual Lock
+bindsym $mod+l exec $HOME/scripts/lock.sh
+
+# Help
+bindsym $mod+question exec $term -t HelpSwayKey -e less ~/scripts/swaykey.txt
+# Screen capture
+
+bindsym Print exec grim -g "$(slurp)" ~/Pictures/screenshots/$(date +"%Y%m%d%H%M%S").png | wl-copy
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway and end your Wayland session?' -b 'Yes, exit sway' 'swaymsg exit'
+
+### Launch personnal scripts ###
+
+bindsym $mod+g exec ~/scripts/show_sway_windows.py
+
+# Moving around:
+
+# Move your focus around
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+### Audio and brightness ###
+
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec brightnessctl set -5%
+
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle

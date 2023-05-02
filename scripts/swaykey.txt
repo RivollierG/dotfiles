@@ -1,0 +1,100 @@
+
+     Sway kinbindings as defined in /home/guillaume/.config/sway/config
+
+     Asterisk (*) indicate a sway specific command
+
+
+          Key                   Command
+
+     +󰌑                   alacritty
+     +d                   wofi --show run -I | xargs swaymsg --
+     Alt+󱁐                 wofi --show drun -I | xargs swaymsg --
+     +m                   nautilus -w ~
+     +ù                   alacritty -e ranger
+     +n                   vivaldi
+     +l                   ~/scripts/lock.sh
+     +?                   alacritty -t HelpSwayKey -e less ~/scripts/swaykey.txt...
+     Print                 grim -g "$(slurp)" ~/Pictures/screenshots/$(date+"%Y%m...
+     +Shift+q           * kill
+     +Shift+c           * reload
+     +Shift+e             swaynag -t warning -m 'Exit sway and end your Wayland ...
+     +g                   ~/scripts/show_sway_windows.py
+     +                 * focus left
+     +                 * focus down
+     +                 * focus up
+     +                 * focus right
+     +Shift+           * move left
+     +Shift+           * move down
+     +Shift+           * move up
+     +Shift+           * move right
+     󰃠                     brightnessctl set+5%
+     󰃞                     brightnessctl set -5%
+     󰝝                     pactl set-sink-volume @DEFAULT_SINK@+5%
+     󰝞                     pactl set-sink-volume @DEFAULT_SINK@ -5%
+     󰝟                     pactl set-sink-mute @DEFAULT_SINK@ toggle
+     +b                 * splith
+     +v                 * splitv
+     +s                 * layout stacking
+     +w                 * layout tabbed
+     +e                 * layout toggle split
+     +f                 * fullscreen
+     +Shift+󱁐           * floating toggle
+     +󱁐                 * focus mode_toggle
+     +a                 * focus parent
+     +Shift+!           * move scratchpad
+     +!                 * scratchpad show
+     +Shift+o             ~/scripts/power.sh
+     +r                 * mode "resize"
+     [mode "resize"]    * resize shrink width 10px
+     [mode "resize"]    * resize grow height 10px
+     [mode "resize"]    * resize shrink height 10px
+     [mode "resize"]    * resize grow width 10px
+     [mode "resize"] 󰌑   * mode "default"
+     [mode "resize"] Esc * mode "default"
+     +&                 * workspace 1
+     +é                 * workspace 2
+     +"                 * workspace 3
+     +'                 * workspace 4
+     +(                 * workspace 5
+     +-                 * workspace 6
+     +è                 * workspace 7
+     +_                 * workspace 8
+     +ç                 * workspace 9
+     +à                 * workspace 0
+     +Shift+&           * move container to workspace 1
+     +Shift+é           * move container to workspace 2
+     +Shift+"           * move container to workspace 3
+     +Shift+'           * move container to workspace 4
+     +Shift+(           * move container to workspace 5
+     +Shift+-           * move container to workspace 6
+     +Shift+è           * move container to workspace 7
+     +Shift+_           * move container to workspace 8
+     +Shift+ç           * move container to workspace 9
+     +Shift+à           * move container to workspace 0
+     +Ctrl+&            * move container to workspace 1; workspace 1
+     +Ctrl+é            * move container to workspace 2; workspace 2
+     +Ctrl+"            * move container to workspace 3; workspace 3
+     +Ctrl+'            * move container to workspace 4; workspace 4
+     +Ctrl+(            * move container to workspace 5; workspace 5
+     +Ctrl+-            * move container to workspace 6; workspace 6
+     +Ctrl+è            * move container to workspace 7; workspace 7
+     +Ctrl+_            * move container to workspace 8; workspace 8
+     +Ctrl+ç            * move container to workspace 9; workspace 9
+     +Ctrl+à            * move container to workspace 0; workspace 0
+     Ctrl+Alt+Shift+y      codium
+     Ctrl+Alt+Shift+c      code
+     Ctrl+Alt+Shift+u      rstudio
+     Ctrl+Alt+Shift+q      jupyter-notebook
+     Ctrl+Alt+Shift+o      spyder
+     Ctrl+Alt+Shift+t      pycharm-ce
+     Ctrl+Alt+Shift+j      helix
+     Ctrl+Alt+Shift+b      brave-browser
+     Ctrl+Alt+Shift+p      sudo -A chromium-browser --no-sandbox --new-window
+     Ctrl+Alt+Shift+r      vivaldi
+     Ctrl+Alt+Shift+z      vivaldi https://rivollierg.github.io/Cheatsheet/Cheats...
+     Ctrl+Alt+Shift+k      vivaldi https://gitlab.com/RivollierG
+     Ctrl+Alt+Shift+;      vivaldi https://github.com/RivollierG?tab=repositories...
+     Ctrl+Alt+Shift+e      vivaldi linkedin.com
+     Ctrl+Alt+Shift+h      vivaldi twitter.com
+     Ctrl+Alt+Shift+a    * kill
+

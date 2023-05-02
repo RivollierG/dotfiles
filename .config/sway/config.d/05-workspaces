@@ -20,7 +20,7 @@ bindsym $mod+parenleft $ws5
 bindsym $mod+minus $ws6
 bindsym $mod+egrave $ws7
 bindsym $mod+underscore $ws8
-bindsym $mod+ccedilla  $ws9
+bindsym $mod+ccedilla $ws9
 bindsym $mod+agrave $ws0
 
 # Move focused container to workspace

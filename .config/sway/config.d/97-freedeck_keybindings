@@ -1,0 +1,28 @@
+### Free Deck keybindings ###
+
+# see https://github.com/freeyourstream/freedeck-wiki/wiki
+
+set $cas Ctrl+Mod1+Shift
+
+bindsym $cas+y exec codium
+bindsym $cas+c exec code
+bindsym $cas+u exec rstudio
+bindsym $cas+q exec jupyter-notebook
+bindsym $cas+o exec spyder
+bindsym $cas+t exec pycharm-ce
+bindsym $cas+j exec helix
+
+bindsym $cas+b exec brave-browser
+bindsym $cas+p exec sudo -A chromium-browser --no-sandbox --new-window 
+bindsym $cas+r exec vivaldi
+
+bindsym $cas+z exec $web_browser https://rivollierg.github.io/Cheatsheet/Cheatsheet.html
+bindsym $cas+k exec $web_browser https://gitlab.com/RivollierG
+bindsym $cas+semicolon exec $web_browser https://github.com/RivollierG?tab=repositories
+#bindsym $cas+d exec
+#bindsym $cas+f exec 
+
+bindsym $cas+e exec $web_browser linkedin.com
+bindsym $cas+h exec $web_browser twitter.com
+
+bindsym $cas+a kill

@@ -12,4 +12,4 @@
 #     bindsym Return    mode "default"
 #     bindsym Escape    mode "default"
 #     }
-bindsym $mod+Shift+o exec ' ~/scripts/power.sh'
+bindsym $mod+Shift+o exec ~/scripts/power.sh
