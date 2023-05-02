@@ -134,12 +134,15 @@ bar {
     swaybar_command waybar
     }
 
+set $basecol #1e242f
+set $accentcol #afd2e9
+set $redcol #da1b2b
 # # class                     border  backgr. text  indicator child_border
-#   client.focused          #4c7899 #285577 #ffffff #3dffe9 #3dffe9
-    client.focused_inactive #333333 #5f676a #ffffff #484e50 #5f676a
-    client.unfocused        #333333 #222222 #888888 #292d2e #222222
-    client.urgent           #2f343a #900000 #ffffff #900000 #900000 
+    client.focused          $basecol $accentcol $basecol $accentcol $accentcol
+    client.focused_inactive $basecol $basecol #ffffff $basecol $basecol
+    client.unfocused        $basecol $basecol $basecol $basecol $basecol
+    client.urgent           $basecol $redcol #ffffff $redcol $redcol
 
 #color focused client
-client.focused          #000000 #cc66cc #000000 #cc66cc #cc66cc 
+
 include ~/.config/sway/config.d/*
