@@ -1,10 +1,8 @@
 @define-color base #1e242f;
-@define-color urgent #b02c36;
 @define-color primary_orange #fe9000;
-@define-color primary_yellow #ffdd4a;
 @define-color primary_red #da1b2b;
-@define-color primary_blue #afd2e9;
-@define-color primary_blue_2 #6fadd6;
+@define-color primary #afd2e9;
+
 
 @keyframes blink-warning {
     70% {
@@ -38,24 +36,29 @@
     border-radius: 0;
     min-height: 0;
     margin: 0;
-    padding: 0;
     font-family: "Fira Code Nerd Font";
 }
 
 /* The whole bar */
 #waybar {
     background: transparent;
-    color: @primary_blue;
-    background-color: @base;
+    color: @primary;
+    background-color: transparent;
+}
+
+.modules-left,
+.modules-right {
     font-size: 12px;
     border-radius: 5em;
+    background: @base;
+    padding: 0px 10px 0px 10px;
 }
 
 /* Every modules */
-#sway-scratchpad,
-#sway-workspaces,
-#sway-window,
-#sway-mode,
+#scratchpad,
+#workspaces,
+#window,
+#mode,
 #tray,
 #custom-clipboard,
 #idle_inhibitor,
@@ -70,7 +73,7 @@
 #custom-weather,
 #custom-power {
     padding: 0px 10px 0px 10px;
-    background: transparent;
+
 }
 
 /* -----------------------------------------------------------------------------
@@ -78,47 +81,42 @@
  * -------------------------------------------------------------------------- */
 
 #scratchpad {
-    border-right: 1px solid;
-    padding-right: 10px;
     padding-left: 10px;
 }
 
 #workspaces {
     font-size: 16px;
-    border-right: 1px solid;
-    padding-right: 10px;
 }
 
 #workspaces button {
-    /*    border-bottom: 3px solid @primary_blue_2;*/
-    margin: 4px 0;
-    padding: 0 6px;
-    color: #ffffff;
+    padding: 0 4px 0 4px;
+    color: @primary;
 }
 
 #workspaces button.focused {
-    /*     border: 1px solid  @primary_yellow; */
-    /*     border-radius: 20px; */
-    color: @primary_yellow;
+    color: @primary_orange;
 }
 
 #workspaces button:hover {
-    border-top: none;
-    /*     border-radius: 20px; */
-    color: @primary_blue;
-    background: transparent;
+    color: @primary;
+    background: @base ;
+    text-shadow: none;
+
 }
 
-
 #workspaces button.urgent {
-    border-color: @primary_red;
     color: @primary_red;
 }
 
-#window {
-    padding-left: 10px;
+window {
     font-weight: bold;
+    padding: 0px 0px 0px 0px;
 }
+
+window image {
+    padding-left: 10px;
+}
+
 
 /* -----------------------------------------------------------------------------
  * Modules Center
@@ -127,6 +125,11 @@
 /* -----------------------------------------------------------------------------
  * Modules Left
  * -------------------------------------------------------------------------- */
+
+#tray image {
+    padding: 0;
+
+}
 
 #idle_inhibitor.activated {
     color: @primary_orange;
@@ -196,16 +199,30 @@
     color: red;
     animation-name: blink-critical;
     animation-duration: 2s;
-    padding-left: 5px;
-    padding-right: 5px;
 }
 
 #custom-power {
-    border-color: white;
-    border-left: 1px solid;
     padding-right: 15px;
-    padding-left: 10px;
-    /* color: @primary_red; */
     font-size: 16px;
     font-weight: bold;
+}
+
+#custom-right,
+#custom-left,
+#custom-right2,
+#custom-left2 {
+    font-size: 21px;
+    color: @primary;
+    background: @base;
+    padding: 0 0px;
+    margin: 0 0px;
+}
+
+#custom-right,
+#custom-left2 {
+    background: @primary;
+    color: @base;
+
+    ;
+
 }
