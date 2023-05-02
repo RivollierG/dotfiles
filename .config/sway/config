@@ -13,6 +13,7 @@ set $mod Mod4
 set $term alacritty
 set $web_browser vivaldi
 set $file_manager nautilus -w ~
+set $file_manager_bis $term -e ranger
 set $menu wofi --show drun -I | xargs swaymsg exec --
 set $menurun wofi --show run -I | xargs swaymsg exec --
 

@@ -11,8 +11,9 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menurun
 bindsym Mod1+Space exec $menu # Alt+space
 
-# Launch thunar
+# Launch File mangers
 bindsym $mod+m exec $file_manager
+bindsym $mod+ugrave exec $file_manager_bis
 
 #web browser
 bindsym $mod+n exec $web_browser

@@ -50,5 +50,6 @@
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "line",
     "redhat.telemetry.enabled": false,
-    "workbench.colorTheme": "Solarized Light"
+    "workbench.colorTheme": "Solarized Light",
+    "explorer.confirmDragAndDrop": false
 }
