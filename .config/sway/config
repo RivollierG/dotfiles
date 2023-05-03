@@ -14,8 +14,8 @@ set $term alacritty
 set $web_browser vivaldi
 set $file_manager_main nautilus -w ~
 set $file_manager_bis $term -e ranger
-set $menudesktop wofi --show drun -I | xargs swaymsg exec --
-set $menurun wofi --show run -I | xargs swaymsg exec --
+set $menudesktop wofi --show drun -Is ~/.config/wofi/styledesktop.css | xargs swaymsg exec --
+set $menurun wofi -I | xargs swaymsg exec --
 
 # Icon and cursor theme
 set $gnome-schema org.gnome.desktop.interface

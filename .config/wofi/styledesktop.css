@@ -48,10 +48,28 @@ window {
 
 #entry:selected {
    background-color: @base;
-   border-radius: 5em;
 }
 
 #entry:selected #text {
    color: @primary;
+   font-weight: bold;
+}
+
+#entry:unselected #text {
+   color: @base;
+   font-weight: normal;
+}
+
+expander #entry {
+   background-color: @primary;
+}
+
+expander #entry #unselected #text {
+   color: grey;
+   font-weight: bold;
+}
+
+expander #entry:selected {
+   background-color: @base;
    font-weight: bold;
 }

@@ -8,8 +8,8 @@
           Key                   Command
 
      Super+󰌑               alacritty
-     Super+d               wofi --show run -I | xargs swaymsg --
-     Alt+󱁐                 wofi --show drun -I | xargs swaymsg --
+     Super+d               wofi -I | xargs swaymsg --
+     Alt+󱁐                 wofi --show drun -Is ~/.config/wofi/styledesktop.css |...
      Super+m               nautilus -w ~
      Super+ù               alacritty -e ranger
      Super+n               vivaldi
