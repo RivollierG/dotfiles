@@ -4,7 +4,6 @@ For sway and waybar workflow.
 
 ## Requirements
 
-- [FiraCode Nerd Font](https://www.nerdfonts.com/)
 - alacritty  
 - jq, curl, git  
 - sway, swayidle, swaylock, swaybg, waybar, wofi  
@@ -45,7 +44,12 @@ git clone --bare https://github.com/RivollierG/dotfiles.git $HOME/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles checkout
 ```
+You will also need to extract icon and cursor themes :
 
+```bash
+tar -xf ~/.icons/Future-cyan-cursors.tar.gz -C ~/.icons/
+tar -xf ~/.icons/Papirus.tar.gz -C ~/.icons/
+```
 
 ## Add user to groups
 
