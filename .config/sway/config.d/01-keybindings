@@ -19,7 +19,8 @@ bindsym $mod+n exec $web_browser
 bindsym $mod+l exec $HOME/scripts/lock.sh
 
 # Help
-bindsym $mod+question exec $term -t HelpSwayKey -e less ~/scripts/swaykey.txt
+bindsym $mod+question exec $help
+
 # Screen capture
 
 bindsym Print exec grim -g "$(slurp)" ~/Pictures/screenshots/$(date +"%Y%m%d%H%M%S").png | wl-copy
