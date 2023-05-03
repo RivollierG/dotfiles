@@ -46,6 +46,10 @@
     background-color: transparent;
 }
 
+window image {
+    padding-left: 10px;
+}
+
 .modules-left,
 .modules-right {
     font-size: 12px;
@@ -108,15 +112,10 @@
     color: @primary_red;
 }
 
-window {
+#window {
     font-weight: bold;
-    padding: 0px 0px 0px 0px;
+    padding: 0px;
 }
-
-window image {
-    padding-left: 10px;
-}
-
 
 /* -----------------------------------------------------------------------------
  * Modules Center
@@ -146,7 +145,7 @@ window image {
 
 #pulseaudio.output.muted {
     color: @primary_red;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 #network.disconnected {
