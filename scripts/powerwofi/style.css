@@ -1,0 +1,40 @@
+* {
+   font-family: 'FiraCode Nerd Font';
+   font-size: 320px;
+   border: 0px solid;
+   margin: 0px;
+   padding: 0px;
+
+}
+
+window {
+   background: transparent;
+
+}
+
+#inner-box {
+   margin-right: 150px;
+   background-color: transparent;
+}
+
+#outer-box {
+   background-color: transparent;
+}
+
+#text {
+   color: white;
+   padding-left: 30px;
+   text-shadow: 0 0 15px black;
+}
+
+#text:selected {
+   color: #da1b2b;
+}
+
+#entry:focus {
+   border: 0px;
+}
+
+#entry:selected {
+   background-color: transparent;
+}

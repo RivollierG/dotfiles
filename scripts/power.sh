@@ -1,21 +1,28 @@
 #!/usr/bin/env bash
+poweroff=""
+reboot=""
+lock=""
+suspend=""
+logout=""
+options="$lock\n$suspend\n$logout\n$reboot\n$poweroff"
 
-op=$( echo -e " Poweroff\n󰜉 Reboot\n Suspend\n Lock\n Logout" | wofi -i --dmenu --lines 7 --prompt 'Sélectionnez une action' | awk '{print tolower($2)}' )
+
+op=$( echo -e $options | wofi -c ~/scripts/powerwofi/config -s ~/scripts/powerwofi/style.css)
 
 case $op in 
-        poweroff)
+        $poweroff)
                 systemctl poweroff
                 ;;
-        reboot)
+        $reboot)
                 systemctl reboot
                 ;;
-        suspend)
-                systemctl $op
+        $suspend)
+                systemctl suspend
                 ;;
-        lock)
-		bash $HOME/.config/scripts/lock.sh
+        $lock)
+                $HOME/scripts/lock.sh
                 ;;
-        logout)
+        $logout)
                 swaymsg exit
                 ;;
 esac
