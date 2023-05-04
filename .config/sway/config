@@ -23,7 +23,7 @@ exec_always gsettings set $gnome-schema cursor-theme "Future-cyan-cursors"
 exec_always gsettings set $gnome-schema icon-theme "Papirus"
 
 # add help
-set $help $term -t HelpSwayKey -e less ~/scripts/swaykey.txt
+set $help $term --title HelpSwayKey -e less ~/scripts/swaykey.txt
 
 # Set Gaps
 gaps inner 5px
