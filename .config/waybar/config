@@ -13,10 +13,11 @@
         "sway/workspaces",
         "custom/right",
         "custom/right2",
-        "sway/window"
+        "sway/window",
+        "sway/mode"
     ],
     "modules-center": [
-        "sway/mode"
+        "mpris"
     ],
     "modules-right": [
         "tray",
@@ -31,25 +32,24 @@
         "pulseaudio#input",
         "custom/left",
         "custom/left2",
-        "network",
         // "battery",
         // "custom/left",
         // "custom/left2",
         // "bluetooth",
         // "custom/left",
         // "custom/left2",
-        "cpu",
-        "memory",
-        "custom/left",
-        "custom/left2",
+        // "cpu",
+        // "memory",
+        // "custom/left",
+        // "custom/left2",
+        "network",
         "clock",
-        "custom/left",
-        "custom/left2",
         "custom/weather",
         "custom/left",
         "custom/left2",
         "custom/power"
     ],
+    ///////////////////// LEFT MODULES /////////////////////
     "sway/scratchpad": {
         "format": "{icon}  {count}",
         "show-empty": true,
@@ -91,6 +91,21 @@
     "sway/mode": {
         "format": "  {}"
     },
+    ///////////////////// CENTER MODULES /////////////////////
+    "mpris": {
+        "format": "{player_icon} <b>{artist}</b> - <small>{title}</small>",
+        "format-paused": "{status_icon} <b>{artist}</b> - <small>{title}</small>",
+        "player-icons": {
+            "default": "",
+            "chromium": "󰖟",
+            "mpv": ""
+        },
+        "status-icons": {
+            "paused": ""
+        },
+        // "ignored-players": ["firefox"]
+    },
+    ///////////////////// RIGHT MODULES /////////////////////
     "tray": {
         "icon-size": 20,
         "spacing": 10
@@ -110,7 +125,7 @@
     },
     "keyboard-state": {
         // user need to be in the input group
-        // sudo usermod guillaume -aG input && reboot
+        // sudo usermod $USER -aG input && reboot
         "numlock": true,
         "capslock": true,
         "format": {
@@ -123,21 +138,26 @@
         }
     },
     "pulseaudio#output": {
-        "format": "{volume}% {icon}",
+        "format": "<big>󰖀</big> {icon}",
         "format-bluetooth": "{volume}% {icon}",
         "format-muted": "󰝟",
         "format-icons": {
-            "headphones": "",
-            "handsfree": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
             "default": [
-                "",
-                ""
+                "<span foreground='#444450'>&#8239;</span>",
+                "<span foreground='#afd2e9'></span><span foreground='#444450'>&#8239;</span>",
+                "<span foreground='#afd2e9'></span><span foreground='#444450'>&#8239;</span>",
+                "<span foreground='#afd2e9'></span><span foreground='#444450'>&#8239;</span>",
+                "<span foreground='#afd2e9'></span><span foreground='#444450'>&#8239;</span>",
+                "<span foreground='#afd2e9'></span><span foreground='#444450'>&#8239;</span>",
+                "<span foreground='#afd2e9'></span><span foreground='#444450'>&#8239;</span>",
+                "<span foreground='#afd2e9'></span><span foreground='#444450'>&#8239;</span>",
+                "<span foreground='#afd2e9'></span><span foreground='#444450'>&#8239;</span>",
+                "<span foreground='#afd2e9'></span><span foreground='#444450'>&#8239;</span>",
+                "<span foreground='#afd2e9'>&#8239;</span>"
             ]
         },
+        "tooltip": true,
+        "tooltip-format": "{volume}%",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "pavucontrol"
     },
@@ -150,11 +170,6 @@
         "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
         "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
         "max-volume": 100
-    },
-    "network": {
-        "format-wifi": "{signalStrength}% ",
-        "format-ethernet": "󰈀",
-        "format-disconnected": "Disconnected ⚠"
     },
     "battery": {
         "bat": "BAT0",
@@ -183,9 +198,15 @@
         "interval": 30,
         "format": "{used:0.1f}/{total:0.1f} "
     },
+    "network": {
+        "format-wifi": "{signalStrength}% ",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "Disconnected ⚠"
+    },
     "clock": {
-        "format": "{:%A %d %B %H:%M}",
-        "format-alt": "{:%H:%M}"
+        "format": "{:%H:%M}",
+        "tooltip": true,
+        "tooltip-format": "{:%A %d %B %H:%M}"
     },
     "custom/weather": {
         "exec": "~/scripts/get_weather.sh Grenoble+France",

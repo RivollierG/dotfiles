@@ -75,7 +75,8 @@ window image {
 #memory,
 #clock,
 #custom-weather,
-#custom-power {
+#custom-power,
+#mpris {
     padding: 0px 10px 0px 10px;
 
 }
@@ -121,13 +122,20 @@ window image {
  * Modules Center
  * -------------------------------------------------------------------------- */
 
+#mpris {
+    font-size: 12px;
+}
+
+#mpris.paused {
+    opacity: 0.6
+}
+
 /* -----------------------------------------------------------------------------
  * Modules Left
  * -------------------------------------------------------------------------- */
 
 #tray image {
     padding: 0;
-
 }
 
 #idle_inhibitor.activated {
@@ -138,18 +146,18 @@ window image {
     color: @primary_orange;
 }
 
-#pulseaudio.input.source-muted {
-    color: @primary_red;
+/* #pulseaudio.output {
     font-size: 16px;
-}
+} */
 
 #pulseaudio.output.muted {
-    color: @primary_red;
+    color: @primary_orange;
     font-size: 20px;
 }
 
-#network.disconnected {
+#pulseaudio.input.source-muted {
     color: @primary_orange;
+    font-size: 16px;
 }
 
 #battery {
@@ -198,6 +206,10 @@ window image {
     color: red;
     animation-name: blink-critical;
     animation-duration: 2s;
+}
+
+#network.disconnected {
+    color: @primary_orange;
 }
 
 #custom-power {
