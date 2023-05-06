@@ -38,8 +38,8 @@
         // "bluetooth",
         // "custom/left",
         // "custom/left2",
-        // "cpu",
-        // "memory",
+        "cpu",
+        "memory",
         // "custom/left",
         // "custom/left2",
         "network",
@@ -192,16 +192,44 @@
         "on-click": "bluetooth toggle"
     },
     "cpu": {
-        "format": "{usage:2}% 󰍛"
+        "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
+        "format-icons": [
+            "▁",
+            "▂",
+            "▃",
+            "▄",
+            "▅",
+            "▆",
+            "▇",
+            "█"
+        ],
+        "interval": 2,
+        "on-click": "exec ~/scripts/floating.sh alacritty -e bpytop"
     },
     "memory": {
-        "interval": 30,
-        "format": "{used:0.1f}/{total:0.1f} "
+        "format": "{icon}",
+        "format-icons": [
+            "▁",
+            "▂",
+            "▃",
+            "▄",
+            "▅",
+            "▆",
+            "▇",
+            "█"
+        ],
+        "interval": 2,
+        "states": {
+            "warning": 90,
+            "critical": 75
+        }
     },
     "network": {
         "format-wifi": "{signalStrength}% ",
         "format-ethernet": "󰈀",
-        "format-disconnected": "Disconnected ⚠"
+        "format-disconnected": "Disconnected ⚠",
+        "tooltip-format-ethernet": "{ifname} {ipaddr}/{cidr}",
+        "tooltip-format-wifi": "{essid} {ipaddr}/{cidr}"
     },
     "clock": {
         "format": "{:%H:%M}",
@@ -212,12 +240,13 @@
         "exec": "~/scripts/get_weather.sh Grenoble+France",
         "return-type": "json",
         "format": "{}",
+        "max-length": 10,
         "tooltip": true,
         "interval": 3600
     },
     "custom/power": {
         "format": "",
-        "on-click": "exec bash ~/scripts/power.sh",
+        "on-click": "exec ~/scripts/power.sh",
         "interval": "once",
         "tooltip": false
     },

@@ -63,22 +63,21 @@ window image {
 #workspaces,
 #window,
 #mode,
+#mpris,
 #tray,
 #custom-clipboard,
 #idle_inhibitor,
 #keyboard-state,
 #pulseaudio,
-#network,
 /* #battery,
 #bluetooth, */
 #cpu,
 #memory,
+#network,
 #clock,
 #custom-weather,
-#custom-power,
-#mpris {
+#custom-power {
     padding: 0px 10px 0px 10px;
-
 }
 
 /* -----------------------------------------------------------------------------
@@ -106,7 +105,6 @@ window image {
     color: @primary;
     background: @base ;
     text-shadow: none;
-
 }
 
 #workspaces button.urgent {
@@ -192,11 +190,7 @@ window image {
     color: @primary_red;
 }
 
-#memory {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
+#memory {}
 
 #memory.warning {
     color: @primary_orange;
@@ -233,7 +227,4 @@ window image {
 #custom-left2 {
     background: @primary;
     color: @base;
-
-    ;
-
 }
