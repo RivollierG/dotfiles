@@ -10,6 +10,9 @@ exec_always ~/scripts/keybindsparse.py ~/.config/sway/config > ~/scripts/swaykey
 ### Allow x window for other user (root)
 exec_always xhost + local:
 
+# Import env variable for some app to detect screen https://github.com/emersion/xdg-desktop-portal-wlr/issues/163
+exec "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+
 ## Clipman no keepass
 # https://www.reddit.com/r/swaywm/comments/ljl0dh/keeping_secrets_secret_with_keepassxc_clipman_and/
 # watched the clipboard and sends any new item to 'myclipman'

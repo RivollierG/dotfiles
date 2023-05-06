@@ -11,7 +11,6 @@ for_window [app_id="waybar" floating] {
 # for_window [window_role="dialog"] floating enable
 # get ids with swaymsg -t get_tree | less
 
-for_window [title="HelpSwayKey"] floating enable
 for_window [app_id="pavucontrol"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
