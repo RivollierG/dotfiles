@@ -89,13 +89,13 @@ input * {
 # Read `man 5 sway-bar` for more information about this section.
 bar swaybar_command waybar
 
-set $basecol #1e242f
-set $accentcol #afd2e9
+set $basecol #241F31
+set $accentcol #99C1F1
 set $redcol #da1b2b
 # # class                     border  backgr. text  indicator child_border
     client.focused          $basecol $accentcol $basecol $accentcol $accentcol
-    client.focused_inactive $basecol $basecol #ffffff $basecol $basecol
-    client.unfocused        $basecol $basecol $basecol $basecol $basecol
+    client.focused_inactive $basecol $accentcol $basecol $basecol $basecol
+    client.unfocused        $basecol $accentcol $basecol $accentcol $accentcol
     client.urgent           $basecol $redcol #ffffff $redcol $redcol
 
 #color focused client

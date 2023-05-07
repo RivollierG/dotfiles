@@ -1,7 +1,7 @@
-@define-color base #1e242f;
-@define-color primary_orange #fe9000;
-@define-color primary_red #da1b2b;
-@define-color primary #afd2e9;
+@define-color base #241F31;
+@define-color primary_orange #FF7800;
+@define-color primary_red #E01B24;
+@define-color primary #99C1F1;
 
 * {
    font-family: 'FiraCode Nerd Font';

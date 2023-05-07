@@ -1,7 +1,8 @@
-@define-color base #1e242f;
-@define-color primary_orange #fe9000;
-@define-color primary_red #da1b2b;
-@define-color primary #afd2e9;
+@define-color base #241F31;
+@define-color primary_orange #FF7800;
+@define-color primary_red #E01B24;
+@define-color primary #99C1F1;
+
 
 
 @keyframes blink-warning {
@@ -11,7 +12,7 @@
 
     to {
         color: white;
-        background-color: orange;
+        background-color: @primary_orange;
     }
 }
 
@@ -22,7 +23,7 @@
 
     to {
         color: white;
-        background-color: red;
+        background-color: @primary_red;
     }
 }
 
@@ -197,7 +198,7 @@ window image {
 }
 
 #memory.critical {
-    color: red;
+    color: @primary_red;
     animation-name: blink-critical;
     animation-duration: 2s;
 }

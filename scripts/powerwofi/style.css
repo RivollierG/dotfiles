@@ -1,3 +1,8 @@
+@define-color base #241F31;
+@define-color primary_orange #FF7800;
+@define-color primary_red #E01B24;
+@define-color primary #99C1F1;
+
 * {
    font-family: 'FiraCode Nerd Font Mono';
    font-size: 450px;
@@ -23,11 +28,11 @@ window {
 #text {
    color: white;
    padding-left: 30px;
-   text-shadow: 0 0 15px black;
+   text-shadow: 0 0 15px @base;
 }
 
 #text:selected {
-   color: #da1b2b;
+   color: @primary_red;
 }
 
 #entry:focus {

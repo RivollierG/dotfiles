@@ -143,17 +143,17 @@
         "format-muted": "󰝟",
         "format-icons": {
             "default": [
-                "<span foreground='#444450'>&#8239;</span>",
-                "<span foreground='#afd2e9'></span><span foreground='#444450'>&#8239;</span>",
-                "<span foreground='#afd2e9'></span><span foreground='#444450'>&#8239;</span>",
-                "<span foreground='#afd2e9'></span><span foreground='#444450'>&#8239;</span>",
-                "<span foreground='#afd2e9'></span><span foreground='#444450'>&#8239;</span>",
-                "<span foreground='#afd2e9'></span><span foreground='#444450'>&#8239;</span>",
-                "<span foreground='#afd2e9'></span><span foreground='#444450'>&#8239;</span>",
-                "<span foreground='#afd2e9'></span><span foreground='#444450'>&#8239;</span>",
-                "<span foreground='#afd2e9'></span><span foreground='#444450'>&#8239;</span>",
-                "<span foreground='#afd2e9'></span><span foreground='#444450'>&#8239;</span>",
-                "<span foreground='#afd2e9'>&#8239;</span>"
+                "<span foreground='#3D3846'>&#8239;</span>",
+                "<span foreground='#99C1F1'></span><span foreground='#3D3846'>&#8239;</span>",
+                "<span foreground='#99C1F1'></span><span foreground='#3D3846'>&#8239;</span>",
+                "<span foreground='#99C1F1'></span><span foreground='#3D3846'>&#8239;</span>",
+                "<span foreground='#99C1F1'></span><span foreground='#3D3846'>&#8239;</span>",
+                "<span foreground='#99C1F1'></span><span foreground='#3D3846'>&#8239;</span>",
+                "<span foreground='#99C1F1'></span><span foreground='#3D3846'>&#8239;</span>",
+                "<span foreground='#99C1F1'></span><span foreground='#3D3846'>&#8239;</span>",
+                "<span foreground='#99C1F1'></span><span foreground='#3D3846'>&#8239;</span>",
+                "<span foreground='#99C1F1'></span><span foreground='#3D3846'>&#8239;</span>",
+                "<span foreground='#99C1F1'>&#8239;</span>"
             ]
         },
         "tooltip": true,
