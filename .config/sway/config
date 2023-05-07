@@ -31,6 +31,10 @@ gaps outer 1px
 smart_gaps on
 smart_borders on
 
+# Set font for (rare) title bar
+
+font "FiraCode Nerd Font" 10
+
 # No title bar
 default_border pixel 2
 default_floating_border none
