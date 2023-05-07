@@ -49,6 +49,7 @@ window {
 #entry:selected {
    background-color: @base;
    border-radius: 5em;
+   outline-style: none;
 }
 
 #entry:selected #text {

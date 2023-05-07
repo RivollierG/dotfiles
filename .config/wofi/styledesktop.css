@@ -48,6 +48,7 @@ window {
 
 #entry:selected {
    background-color: @base;
+   outline-style: none;
 }
 
 #entry:selected #text {
