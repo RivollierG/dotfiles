@@ -1,6 +1,6 @@
 * {
-   font-family: 'FiraCode Nerd Font';
-   font-size: 320px;
+   font-family: 'FiraCode Nerd Font Mono';
+   font-size: 450px;
    border: 0px solid;
    margin: 0px;
    padding: 0px;
@@ -9,7 +9,6 @@
 
 window {
    background: transparent;
-
 }
 
 #inner-box {

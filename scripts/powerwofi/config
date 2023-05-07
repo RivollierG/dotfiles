@@ -1,10 +1,10 @@
 mode=dmenu
 width=100%
-height=40%
+height=100%
 hide_scroll=true
 location=2
 x=0
-y=250
+y=0
 orientation=horizontal
 hide_search=true
 cache_file=/dev/null
